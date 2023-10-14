@@ -10,7 +10,7 @@ const port = 3000;
 app.use(express.static(path.join(__dirname, 'public')));
 
 // HTTP logger
-app.use(morgan('combined'));
+// app.use(morgan('combined'));
 
 // Template engine setup
 app.engine('.hbs', engine({
@@ -20,12 +20,20 @@ app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 // console.log('PATH:', path.join(__dirname, 'resources/views'));
 
+
+// Basic routing
 app.get('/', (req, res) => {
   res.render('home');
 });
 
 app.get('/news', (req, res) => {
+  console.log(req.query.q)
   res.render('news');
+});
+
+app.get('/search', (req, res) => {
+  // console.log(req.query.q);
+  res.render('search');
 });
 
 app.listen(port, () => {
