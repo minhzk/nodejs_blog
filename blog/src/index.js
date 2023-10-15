@@ -6,6 +6,9 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
+
+const route = require('./routes');
+
 // Static file
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -27,27 +30,13 @@ app.set('views', path.join(__dirname, 'resources/views'));
 // console.log('PATH:', path.join(__dirname, 'resources/views'));
 
 
-// Basic routing
-app.get('/', (req, res) => {
-  res.render('home');
-});
 
-app.get('/news', (req, res) => {
-  console.log(req.query.q)
-  res.render('news');
-});
+// Home, search, contact 
 
-app.get('/search', (req, res) => {
-  // console.log(req.query.q);
-  res.render('search');
-});
+// Routes init
+route(app);
 
-app.post('/search', (req, res) => {
 
-  console.log(req.body)
-
-  res.send('');
-});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
