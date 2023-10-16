@@ -1,1 +1,15 @@
 @import 'variables';
+
+.card-container {
+    display: flex;
+}
+
+.card-course-item {
+    flex: 1;
+    margin-top: 16px;
+    min-height: 260px;
+}
+
+.card-text {
+    min-height: 96px;
+}
