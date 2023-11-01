@@ -27,6 +27,11 @@
     align-items: center;
 }
 
-.stored-header a[href="/courses/create"] {
+.stored-header a[href='/courses/create'] {
     margin-left: auto;
+}
+
+.checkbox-select-all-options {
+    width: 160px;
+    margin: 0 16px;
 }
